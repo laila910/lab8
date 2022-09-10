@@ -1,4 +1,4 @@
-
+//----------------------fetch api
   const tab=document.getElementById('users');
   const url = 'https://reqres.in/api/users?page=2';
 
@@ -36,7 +36,7 @@
       console.log(error);
     });
     
-
+//-------------------loginform
  
     function login(e){
         e.preventDefault();
@@ -81,4 +81,61 @@
           
 
        }
+
+
+
+//------------------------todolist
+arrayofLocalS=[];   
+ function push(){
+    var newtask=document.querySelector('#newtask input');
+    var message=document.createElement('div');
+    var tasks=document.querySelector('#tasks');
+    if(newtask.value.length == 0){
+        console.log('Welcome');
+       
+        message.innerHTML='<h1 style="text-align:center"> enter your task name </h1>';
+        document.body.appendChild(message);
+        
+    }
+
+    else{
+        //add tasks to local storage 
+        arrayofLocalS.push(newtask.value);
+        localStorage.setItem('tasks',JSON.stringify(arrayofLocalS));
+        returnTasks=JSON.parse(localStorage.getItem('tasks'));
+        console.log(returnTasks);
+       tasks.innerHTML += `
+            <div class="task">
+                <span id="taskname">
+                    ${newtask.value}
+                </span>
+                <button class="add">
+                <i class="fa fa-check" aria-hidden="true"></i>
+                </button>
+                <button class="delete">
+                <i class="fa fa-window-close" aria-hidden="true"></i>
+                </button>
+            </div>
+        `;
+
+        var currentTasks = document.querySelectorAll(".delete");
+        for(var i=0; i<currentTasks.length; i++){
+            currentTasks[i].onclick = function(){
+                this.parentNode.remove();
+            };
+        }
+        
+       var currenttasks =document.querySelectorAll('.add');
+         for(var y=0;y<currenttasks.length;y++){
+            currenttasks[y].onclick=function(){
+                var status=document.createElement('p');
+                status.innerHTML='<p>Done</p>';
+                this.parentNode.appendChild(status);
+                document.body.appendChild(this.parentNode);
+            };
+         }
+        
+
+    }
+ }
           

@@ -26,6 +26,16 @@ as in image ![image2](imgTasks/Screen%20Shot%202022-05-19%20at%2012.32.07%20PM.p
   5. if form submitted
   ![image](Solve/formsubmitted.jpg)
 
+## Third Part
+ update your todolist to save the tasks to local storage 
+ as in image ![image](imgTasks/Screen%20Shot%202022-05-19%20at%2012.28.15%20PM.png)
+
+## Solve 3
+> 1. before add to LocalStorage
+ ![image](Solve/beforeaddtolocalstorage.jpg)
+
+ 2. after add 2 tasks to local storage
+ ![image](Solve/afteraddtolocal.jpg)
 
 
 
